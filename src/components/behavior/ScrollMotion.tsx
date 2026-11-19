@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 /**
  * Motor de animação ligada ao scroll. Só calcula números e os entrega ao CSS
- * como variáveis (--hp, --p, --pd, --lit, --seg, --sp); todo o visual vive em motion.css.
+ * como variáveis (--hp, --p, --pd, --sp); todo o visual vive em motion.css.
  *
  * - Um único listener de scroll, agrupado em requestAnimationFrame.
  * - Só escreve no DOM quando o valor mudou.
@@ -48,9 +48,6 @@ export function ScrollMotion() {
     const hero = document.querySelector<HTMLElement>("[data-hero]");
     const heroT: Tracked | null = hero ? { el: hero, last: -1 } : null;
 
-    const timeline = document.querySelector<HTMLElement>("[data-timeline]");
-    const steps = timeline ? (Array.from(timeline.children) as HTMLElement[]) : [];
-    const stepT = steps.map((el) => ({ lit: { el, last: -1 } as Tracked, seg: { el, last: -1 } as Tracked }));
 
     let spLast = -1;
     let frame = 0;
@@ -86,21 +83,6 @@ export function ScrollMotion() {
         const dist = (r.top + r.height / 2 - vh / 2) / vh;
         if (Math.abs(dist) > 2.2) continue;
         write(d, "--pd", clamp(dist, -1.6, 1.6));
-      }
-
-      // Linha do tempo do processo: peças acendem em sequência
-      if (timeline && steps.length) {
-        const r = timeline.getBoundingClientRect();
-        const wide = window.innerWidth >= 900;
-        const n = steps.length;
-        const progress = wide
-          ? (vh * 0.82 - r.top) / (vh * 0.5)
-          : (vh * 0.68 - r.top) / (r.height * 0.9);
-        const t = clamp(progress) * (n - 0.5);
-        stepT.forEach((s, i) => {
-          write(s.lit, "--lit", clamp((t - i) * 2));
-          write(s.seg, "--seg", clamp((t - i - 0.5) * 2));
-        });
       }
     };
 

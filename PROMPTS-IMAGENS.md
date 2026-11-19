@@ -92,7 +92,7 @@ O Brand Book usa o **cavalo** de xadrez como conceito da marca (cavalo + letra P
 Anexar: `ref-xadrez.png`
 
 ```
-Anexei uma imagem de referência. Recrie a MESMA composição, luz, paleta e atmosfera, mas troque a peça: em vez da rainha, a peça principal é um CAVALO de xadrez (a peça com cabeça e crina de cavalo, de perfil, voltado para a DIREITA). Formato PANORÂMICO horizontal (se puder, proporção 21:9; se não, 3:2 horizontal, 1536x1024, mantendo a composição abaixo, com o cavalo ocupando toda a altura), alta resolução, como uma foto COMPLETA cinematográfica de produto, com o fundo.
+Anexei uma imagem de referência. Recrie a MESMA composição, luz, paleta e atmosfera, mas troque a peça: em vez da rainha, a peça principal é um CAVALO de xadrez (a peça com cabeça e crina de cavalo, de perfil, voltado para a DIREITA). Formato horizontal 3:2 (1536x1024), alta resolução, com o cavalo ocupando toda a altura, como uma foto COMPLETA cinematográfica de produto, com o fundo.
 
 IMPORTANTE: remova da referência TODO texto, botão, linha divisória e rótulos. A imagem final não pode ter nenhuma letra.
 

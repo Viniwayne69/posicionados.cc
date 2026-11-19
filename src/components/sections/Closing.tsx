@@ -13,10 +13,10 @@ export function Closing() {
 
       <div className="closing__media" data-pd>
         <ImageSlot
-          src="/img/fechamento.jpg"
+          src="/img/fechamento.webp"
           alt="Cavalo de xadrez terracota em close, sobre fundo escuro"
-          width={1600}
-          height={1200}
+          width={1536}
+          height={1024}
         />
       </div>
 

@@ -1,3 +1,4 @@
+import { Pieces3D } from "@/components/behavior/Pieces3D";
 import { Ghost } from "@/components/ui/Ghost";
 import { Words } from "@/components/ui/Words";
 import { PROCESS } from "@/content/sections";
@@ -88,7 +89,7 @@ export function Process() {
           <Words text="Processo" /> <strong className="em"><Words text="criativo" from={1} /></strong>
         </h2>
 
-        <ol className="process__steps" data-timeline>
+        <ol className="process__steps">
           {PROCESS.steps.map((step, index) => {
             const parts = PIECES[index % PIECES.length];
             return (
@@ -99,19 +100,18 @@ export function Process() {
                   aria-hidden="true"
                   focusable="false"
                 >
-                  <g className="piece__glow">
-                    <Strokes parts={parts} />
-                  </g>
                   <g className="piece__ink">
                     <Strokes parts={parts} ink />
                   </g>
                 </svg>
+                <canvas className="step__canvas" data-piece={index} aria-hidden="true" />
                 <h3 className="step__name">{step.name}</h3>
                 <p className="step__text">{step.text}</p>
               </li>
             );
           })}
         </ol>
+        <Pieces3D />
       </div>
     </section>
   );

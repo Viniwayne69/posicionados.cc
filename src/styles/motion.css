@@ -2,7 +2,7 @@
    6. MOTION
    Animações ligadas ao scroll. Linguagem única: lentas, curtas em distância,
    sem brilho nem sombra. O motor (ScrollMotion.tsx) só entrega números por variável:
-   --hp (hero), --p (entrada do elemento), --pd (profundidade), --lit/--seg (processo), --sp (página).
+   --hp (hero), --p (entrada do elemento), --pd (profundidade), --sp (página).
    Sem JS, ou com prefers-reduced-motion, tudo aparece no estado final.
    ========================================================================== */
 
@@ -153,13 +153,7 @@
   /* ---------- Fechamento: imagem em paralaxe lenta ---------- */
 
   .closing__media .slot__img {
-    scale: 1.14;
-    translate: 0 calc(var(--pd, 0) * -26px);
-  }
-
-  /* ---------- Processo: a luz sobe por dentro de cada peça conforme o scroll ---------- */
-
-  .js .piece__glow {
-    clip-path: inset(calc((1 - var(--lit, 1)) * 100%) 0 0 0);
+    scale: 1.04;
+    translate: 0 calc(var(--pd, 0) * -12px);
   }
 }

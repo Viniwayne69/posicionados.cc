@@ -12,10 +12,10 @@ export function Studio() {
           <div className="studio__arch" data-scrub="0.98,0.45">
             <ImageSlot
               className="slot--arch"
-              src="/img/estudio-arco.jpg"
+              src="/img/estudio-arco.webp"
               alt="Ambiente do Studio Mob, em Recife, com mobiliário e iluminação de estúdio"
-              width={900}
-              height={1200}
+              width={1024}
+              height={1536}
             />
           </div>
 

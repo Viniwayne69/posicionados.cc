@@ -5,8 +5,8 @@ Coloque aqui os arquivos com **exatamente** estes nomes. Enquanto um arquivo nã
 | Arquivo | Onde aparece | Formato |
 | --- | --- | --- |
 | `mulher.webp` | Hero (desktop e celular): silhueta da mulher **sem fundo**, por cima do círculo feito em CSS | WebP transparente, 1536×1154 (proporção fixa no código) |
-| `estudio-arco.jpg` | Foto do estúdio, dentro da moldura em arco | JPG, 3:4, 900×1200 |
-| `fechamento.jpg` | Fechamento (cavalo de xadrez em close, no terço esquerdo; metade direita escura e vazia). A foto ocupa a seção inteira no desktop | JPG, largo, 1600×1200 |
+| `estudio-arco.webp` | Foto do estúdio, dentro da moldura em arco | WebP, 2:3, 1024×1536 (usada na resolução original) |
+| `fechamento.webp` | Fechamento (cavalo de xadrez em close, no terço esquerdo; metade direita escura e vazia). A foto ocupa a seção inteira no desktop | WebP, 3:2, 1536×1024 (usada na resolução original) |
 | `og.jpg` | Compartilhamento (Open Graph / Twitter) | JPG, 1200×630 |
 
 Dicas

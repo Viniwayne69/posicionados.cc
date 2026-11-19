@@ -30,7 +30,7 @@ export function Hero() {
       <div className="container hero__meta hero__meta--top">
         <span className="hero__corner" aria-hidden="true" />
         <span className="label hero__tagline">{HERO.top[1]}</span>
-        <span className="label hero__corner">© {CONFIG.year}</span>
+        <span className="hero__corner" aria-hidden="true" />
       </div>
 
       <div className="hero__content">
@@ -53,7 +53,7 @@ export function Hero() {
 
       <div className="container hero__meta hero__meta--bottom">
         <span aria-hidden="true" />
-        <span className="hero__cue" aria-hidden="true" />
+        <span aria-hidden="true" />
         <a
           className="label hero__link"
           href={CONFIG.instagram}

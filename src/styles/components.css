@@ -346,7 +346,7 @@
 }
 
 .slot--arch {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 2 / 3;
   border-radius: 999px 999px 0 0;
 }
 
@@ -498,36 +498,6 @@
 
 .hero__line {
   display: block;
-}
-
-.hero__cue {
-  position: relative;
-  width: 1px;
-  height: 2.5rem;
-  align-self: end;
-  overflow: hidden;
-  background: rgb(var(--creme-rgb) / 0.22);
-}
-
-.hero__cue::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--creme);
-  transform: translateY(-100%);
-  animation: cue 2.6s var(--ease) infinite;
-}
-
-@keyframes cue {
-  0% {
-    transform: translateY(-100%);
-  }
-  55% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(100%);
-  }
 }
 
 .hero__link {
@@ -991,14 +961,15 @@
 }
 
 .process__steps {
+  --ps: 64px; /* tamanho da peça */
+  --pt: -1.2rem; /* deslocamento vertical da peça */
   display: grid;
+  padding-left: calc(var(--ps) / 2); /* mobile: espaço para a peça centrada no trilho */
 }
 
 .step {
-  --ps: 32px; /* tamanho da peça */
-  --pt: -0.3rem; /* deslocamento vertical da peça */
   position: relative;
-  padding: 0 0 2.75rem 2.75rem;
+  padding: 0 0 3rem calc(var(--ps) / 2 + 1.1rem);
 }
 
 /* Trilho (mobile: vertical): segmento que começa e termina com folga das peças */
@@ -1006,8 +977,8 @@
   content: "";
   position: absolute;
   left: 0;
-  top: calc(var(--pt) + var(--ps) + 8px);
-  bottom: calc(8px - var(--pt));
+  top: calc(var(--pt) + var(--ps) + 6px);
+  bottom: calc(6px - var(--pt));
   width: 1px;
   background: linear-gradient(
     to bottom,
@@ -1020,28 +991,42 @@
   display: none;
 }
 
-/* Peça de xadrez em traço fino terracota, sempre visível */
-.step__piece {
+/* Peça: SVG em traço fino (antes do 3D carregar, ou sem WebGL) e canvas 3D no mesmo lugar */
+.step__piece,
+.step__canvas {
   position: absolute;
-  left: calc(var(--ps) / -2 + 0.5px);
+  left: calc(var(--ps) / -2);
   top: var(--pt);
   width: var(--ps);
   height: var(--ps);
+}
+
+.step__piece {
+  padding: 18%;
   fill: none;
   stroke-width: 1;
   stroke-linecap: round;
   stroke-linejoin: round;
   overflow: visible;
+  transition: opacity 0.6s var(--ease);
+}
+
+.step__canvas {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.9s var(--ease);
+}
+
+.is-3d .step__piece {
+  opacity: 0;
+}
+
+.is-3d .step__canvas {
+  opacity: 1;
 }
 
 .piece__ink {
   stroke: var(--accent);
-}
-
-/* Luz interna: preenchimento claro dentro da peça (sem traço), que sobe com o scroll */
-.piece__glow {
-  fill: color-mix(in srgb, var(--rosa-areia) 62%, transparent);
-  stroke: none;
 }
 
 .piece__eye {
@@ -1163,7 +1148,7 @@
 .closing__media {
   position: relative;
   z-index: -1;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
   min-height: 15rem;
 }
 
@@ -1203,67 +1188,94 @@
   position: relative;
   overflow: clip;
   isolation: isolate;
-  padding-block: clamp(3rem, 7vw, 5rem) 2rem;
+  padding-block: clamp(4rem, 9vw, 6.5rem) 0;
 }
 
 .ghost--footer {
-  right: -12rem;
-  bottom: -14rem;
-  width: clamp(20rem, 52vw, 44rem);
+  right: -10rem;
+  bottom: -12rem;
+  width: clamp(18rem, 40vw, 34rem);
 }
 
-.footer__symbol {
-  width: auto;
-  height: 45px;
+/* Marca, navegação e contato */
+.footer__top {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.75rem 1.5rem;
+  padding-bottom: clamp(3rem, 7vw, 4.5rem);
+}
+
+.footer__brand {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+}
+
+.footer__logo {
+  margin: 0;
+  line-height: 0;
   color: var(--creme);
 }
 
-/* Assinatura: no celular o nome em 3 linhas, no desktop linha fina + nome em uma linha */
-.footer__sign {
-  display: grid;
-  gap: 0.9rem;
-  margin-block: clamp(2.5rem, 6vw, 4rem);
-}
-
-.footer__stack {
+.footer__logo svg {
   width: auto;
-  height: clamp(8rem, 38vw, 11rem);
-  color: var(--terracota);
-}
-
-.footer__line,
-.footer__word {
-  display: none;
-}
-
-.footer__tag {
-  font-size: 0.8rem;
-  font-weight: 200;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--fg);
-}
-
-.footer__grid {
-  display: grid;
-  gap: 1.75rem;
+  height: 45px; /* tamanho mínimo do logo online (Brand Book) */
 }
 
 .footer__tagline {
-  max-width: 24rem;
-  margin-top: 0.6rem;
+  max-width: 22rem;
   font-size: var(--fs-small);
   color: var(--fg-2);
+  text-wrap: pretty;
 }
 
-.footer__handle {
+.footer__heading {
+  margin-bottom: 1.1rem;
+}
+
+.footer__list {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.footer__link {
   display: inline-flex;
   align-items: center;
-  min-height: 2.75rem;
+  min-height: 2.25rem;
+  font-size: var(--fs-small);
+  color: var(--fg-2);
   transition: color 0.3s var(--ease);
 }
 
-.footer__handle:hover {
+.footer__link:hover,
+.footer__link:focus-visible {
+  color: var(--fg);
+}
+
+/* Linha final: direitos, assinatura, voltar ao topo */
+.footer__bottom {
+  display: grid;
+  gap: 0.75rem;
+  padding-block: 1.75rem 2.25rem;
+  border-top: 1px solid var(--line);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--ls-micro);
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+
+.footer__top-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 2.25rem;
+  justify-self: start;
+  transition: color 0.3s var(--ease);
+}
+
+.footer__top-link:hover,
+.footer__top-link:focus-visible {
   color: var(--fg);
 }
 
