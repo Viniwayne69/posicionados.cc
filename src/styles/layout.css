@@ -1,0 +1,147 @@
+/* ==========================================================================
+   3. LAYOUT
+   Container, seções, utilitários de composição, camadas decorativas, reveal.
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: calc(var(--container) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Conteúdo acima das camadas decorativas (grão, círculo) */
+.section > .container,
+.closing > .closing__body {
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  position: relative;
+  padding-block: var(--section-y);
+  overflow: clip;
+  isolation: isolate;
+}
+
+/* Micro rótulo */
+.label {
+  display: block;
+  font-size: var(--fs-micro);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: var(--ls-micro);
+  text-transform: uppercase;
+  color: var(--fg-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.label--accent {
+  color: var(--accent-text);
+}
+
+/* Títulos de seção */
+.title {
+  font-size: var(--fs-h2);
+}
+
+.em {
+  font-weight: 800;
+  text-transform: uppercase; /* palavra-chave em caixa alta e negrito, como no brand book */
+  letter-spacing: -0.01em;
+  color: var(--emph);
+}
+
+/* Linha fina divisória */
+.rule {
+  display: block;
+  width: 3.5rem;
+  height: 1px;
+  background: var(--line);
+  border: 0;
+}
+
+/* Texto corrido: cada frase em seu próprio parágrafo curto */
+.prose {
+  display: grid;
+  gap: 1rem;
+  color: var(--fg-2);
+  max-width: 40rem;
+}
+
+.prose p {
+  text-wrap: pretty;
+}
+
+/* Cabeçalho de seção (rótulo + título + subtexto) */
+.section-head {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.section-head__sub {
+  color: var(--fg-2);
+  max-width: 34rem;
+  text-wrap: pretty;
+}
+
+/* ---------- Camadas decorativas ---------- */
+
+/* Grão de filme (SVG feTurbulence embutido) */
+.grain {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+}
+
+/* Círculo terracota chapado (cor oficial), CSS puro */
+.sun {
+  position: absolute;
+  z-index: 0;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  pointer-events: none;
+  background: var(--terracota);
+}
+
+/* Símbolo gigante tom sobre tom, cortado pela borda e levemente inclinado (Brand Book) */
+.ghost {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  color: var(--ghost);
+  transform: rotate(-9deg);
+}
+
+.ghost svg {
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- Reveal ao rolar ---------- */
+/* Só esconde quando o JS está ativo (classe .js no <html>); sem JS o conteúdo aparece */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity var(--t-reveal) var(--ease),
+    transform var(--t-reveal) var(--ease);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+
+.js [data-reveal][data-revealed] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

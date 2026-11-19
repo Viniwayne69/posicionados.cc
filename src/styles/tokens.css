@@ -1,0 +1,100 @@
+/* ==========================================================================
+   1. TOKENS
+   Cores, tipografia, espaçamento, movimento. Única fonte de valores do design.
+   ========================================================================== */
+
+:root {
+  /* Paleta oficial (Brand Book 2024) */
+  --grafite: #222121;
+  --creme: #f3f1ec;
+  --areia: #ede7db;
+  --terracota: #b9705a;
+  --rosa-areia: #d0a394; /* símbolo fantasma sobre creme */
+  --grafite-ghost: #272626; /* símbolo fantasma sobre grafite */
+  --areia-ghost: #e6d6c7; /* símbolo fantasma sobre areia */
+
+  /* Canais RGB (para transparências) */
+  --creme-rgb: 243 241 236;
+  --grafite-rgb: 34 33 33;
+  --terracota-rgb: 185 112 90;
+
+  /* Fonte (injetada pelo next/font no layout) */
+  --font-sans: var(--font-manrope), "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Escala tipográfica fluida */
+  --fs-h1: clamp(2.2rem, 0.9rem + 3.6vw, 4.9rem);
+  --fs-h2: clamp(1.9rem, 1.1rem + 2.3vw, 3.3rem);
+  --fs-h3: clamp(1.25rem, 1.05rem + 0.8vw, 1.65rem);
+  --fs-lead: clamp(1.25rem, 1rem + 1.1vw, 1.9rem);
+  --fs-body: clamp(0.95rem, 0.92rem + 0.15vw, 1.05rem);
+  --fs-small: 0.9375rem; /* 15px: nenhum texto de corpo abaixo disso */
+  --fs-micro: 0.68rem;
+
+  --lh-body: 1.7;
+  --lh-title: 1.05;
+  --ls-title: -0.03em;
+  --ls-micro: 0.22em;
+
+  /* Layout */
+  --container: 80rem;
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+  --section-y: clamp(5rem, 11vw, 9rem);
+  --header-h: 4rem;
+
+  /* Movimento */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --t-reveal: 700ms;
+
+  /* Camadas */
+  --z-header: 50;
+  --z-cta: 60;
+  --z-menu: 100;
+}
+
+/* Temas de seção: cada seção define fundo e níveis de texto */
+.theme-dark {
+  --bg: var(--grafite);
+  --fg-rgb: var(--creme-rgb);
+  --a2: 0.72; /* texto secundário */
+  --a3: 0.56; /* micro rótulos (ajustado de 45% para manter contraste AA) */
+  --a-line: 0.14;
+  --accent: var(--terracota); /* terracota em texto grande ou negrito */
+  --emph: var(--terracota);
+  --accent-text: var(--rosa-areia); /* texto pequeno em destaque (contraste AA) */
+  --ghost: var(--grafite-ghost);
+}
+
+.theme-cream {
+  --bg: var(--creme);
+  --fg-rgb: var(--grafite-rgb);
+  --a2: 0.8;
+  --a3: 0.68;
+  --a-line: 0.16;
+  --accent: var(--terracota); /* só em texto grande, negrito, linhas e fundos */
+  --emph: var(--terracota);
+  --accent-text: var(--fg-2); /* texto pequeno: grafite, não terracota */
+  --ghost: var(--areia-ghost);
+}
+
+.theme-sand {
+  --bg: var(--areia);
+  --fg-rgb: var(--grafite-rgb);
+  --a2: 0.8;
+  --a3: 0.7;
+  --a-line: 0.18;
+  --accent: var(--terracota); /* só em texto grande, negrito, linhas e fundos */
+  --emph: var(--terracota);
+  --accent-text: var(--fg-2); /* texto pequeno: grafite, não terracota */
+  --ghost: var(--areia-ghost);
+}
+
+.theme-dark,
+.theme-cream,
+.theme-sand {
+  --fg: rgb(var(--fg-rgb));
+  --fg-2: rgb(var(--fg-rgb) / var(--a2));
+  --fg-3: rgb(var(--fg-rgb) / var(--a3));
+  --line: rgb(var(--fg-rgb) / var(--a-line));
+  background-color: var(--bg);
+  color: var(--fg);
+}

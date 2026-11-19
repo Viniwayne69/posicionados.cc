@@ -1,0 +1,349 @@
+/* ==========================================================================
+   5. RESPONSIVO
+   Breakpoints: 600px, 900px, 1024px (cabeçalho), 1200px.
+   ========================================================================== */
+
+/* ---------- 600px ---------- */
+@media (min-width: 37.5em) {
+  .hero__meta--top {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+  }
+
+  .hero__meta--top .hero__corner {
+    display: block;
+  }
+
+  .hero__meta--top .hero__corner:last-child {
+    justify-self: end;
+  }
+
+  .presence__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 3rem;
+    border-top: 0;
+  }
+
+  .presence__item {
+    border-top: 1px solid var(--line);
+    border-bottom: 0;
+  }
+
+  .footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
+/* ---------- 900px ---------- */
+@media (min-width: 56.25em) {
+  :root {
+    --header-h: 4.5rem;
+  }
+
+  .mobile-cta {
+    display: none;
+  }
+
+  /* Hero */
+  .hero {
+    padding-bottom: 1.75rem;
+  }
+
+  .hero__figure {
+    bottom: 0;
+    height: 100%;
+  }
+
+  .hero__figure .slot__img {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .hero__figure .sun--hero {
+    top: 38%;
+    width: 66%;
+  }
+
+  .hero__mark {
+    height: 3.25rem;
+  }
+
+  .hero__title {
+    max-width: 15em;
+  }
+
+  /* Presença */
+  .presence__head {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    column-gap: clamp(3rem, 7vw, 7rem);
+    align-items: end;
+  }
+
+  .presence__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 0;
+  }
+
+  .presence__item {
+    padding: 0.5rem 1.75rem 1rem;
+    border-top: 0;
+    border-left: 1px solid var(--line);
+  }
+
+  .presence__item:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  /* Pacotes */
+  .packages__head {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    column-gap: clamp(3rem, 7vw, 7rem);
+    align-items: end;
+  }
+
+  .pkg__trigger {
+    grid-template-columns: minmax(0, 1fr) auto 1.5rem;
+    grid-template-areas: "main price icon";
+    align-items: center;
+    column-gap: 1rem;
+    padding-block: 2rem;
+  }
+
+  .pkg__price {
+    font-size: 1.25rem;
+    padding-right: 1rem;
+  }
+
+  .pkg__trigger .acc__icon {
+    margin-top: 0;
+  }
+
+  .pkg__panel {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    column-gap: clamp(2.5rem, 6vw, 6rem);
+    padding: 0.5rem 2.5rem 3.25rem 4.5rem;
+  }
+
+  /* Estúdio */
+  .studio__intro {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    column-gap: clamp(3rem, 7vw, 7rem);
+  }
+
+  .studio__arch {
+    width: min(100%, 30rem);
+    margin-inline: 0;
+  }
+
+  .studio__groups {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(2.5rem, 6vw, 6rem);
+    border-top: 0;
+  }
+
+  .studio__groups .acc__item {
+    border-top: 1px solid var(--line);
+    border-bottom: 0;
+  }
+
+  .hours {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    grid-template-areas:
+      "head table"
+      "head notes";
+    column-gap: clamp(3rem, 7vw, 7rem);
+    row-gap: 1.75rem;
+    align-items: start;
+  }
+
+  .hours__head {
+    grid-area: head;
+  }
+
+  .hours__table {
+    grid-area: table;
+  }
+
+  .hours__notes {
+    grid-area: notes;
+  }
+
+  /* Processo: linha horizontal */
+  .process__steps {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .step {
+    padding: 3.5rem 1.75rem 0 0;
+  }
+
+  .step::before {
+    left: calc(var(--ps) + 12px);
+    right: 14px;
+    top: calc(var(--ps) / 2);
+    bottom: auto;
+    width: auto;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      color-mix(in srgb, var(--accent) 60%, transparent),
+      rgb(var(--creme-rgb) / 0.08)
+    );
+  }
+
+  .step__piece {
+    left: -3px;
+    top: 0;
+  }
+
+  /* Condições */
+  .conditions__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    column-gap: clamp(3rem, 7vw, 7rem);
+    align-items: start;
+  }
+
+  .conditions__head {
+    position: sticky;
+    top: calc(var(--header-h) + 2.5rem);
+    margin-bottom: 0;
+  }
+
+  /* Fechamento: foto ocupa a seção inteira, texto sobre a metade escura à direita */
+  .closing {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    min-height: min(46rem, 92svh);
+  }
+
+  .closing__media {
+    position: absolute;
+    inset: 0;
+    aspect-ratio: auto;
+    min-height: 0;
+  }
+
+  .closing__media .slot__img {
+    object-position: 22% center;
+  }
+
+  .closing__media .slot {
+    --slot-overlay: linear-gradient(90deg, rgb(34 33 33 / 0) 0%, rgb(34 33 33 / 0.2) 40%, rgb(34 33 33 / 0.88) 64%, var(--grafite) 80%);
+  }
+
+  .closing__body {
+    grid-column: 2;
+    align-content: center;
+    padding-block: clamp(5rem, 9vw, 8rem);
+    padding-left: clamp(1rem, 3vw, 3rem);
+  }
+
+  /* Rodapé */
+  .footer__grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 4fr) auto;
+    column-gap: 3rem;
+    align-items: end;
+  }
+}
+
+/* ---------- 1024px: navegação completa no cabeçalho ---------- */
+@media (min-width: 64em) {
+  .header__nav {
+    display: flex;
+  }
+
+  .header__cta {
+    display: inline-flex;
+  }
+
+  .menu-btn,
+  .menu {
+    display: none;
+  }
+}
+
+/* ---------- 1200px ---------- */
+@media (min-width: 75em) {
+  /* Espaço para o logo completo (306px) */
+  .header .logo__full {
+    display: block;
+  }
+
+  .header .logo__mark {
+    display: none;
+  }
+
+  /* "Brand Agency · Brand Content" logo abaixo do nome, alinhado ao início do nome */
+  .header .logo {
+    position: relative;
+    top: -6px;
+  }
+
+  .header .logo__tag {
+    display: block;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 55.5px; /* início do nome: 45px de altura × 142/115 */
+    white-space: nowrap;
+    font-size: 0.62rem;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgb(var(--creme-rgb) / 0.82);
+  }
+
+  /* No desktop o texto já aparece sob o nome, então sai do hero */
+  .hero__tagline {
+    visibility: hidden;
+  }
+
+  .header__nav {
+    gap: 0.5rem 2.25rem;
+  }
+
+  .presence__item {
+    padding-inline: 2.25rem;
+  }
+
+  .hero__title {
+    max-width: 16em;
+  }
+}
+
+/* ---------- Assinatura do rodapé (desktop) ---------- */
+@media (min-width: 56.25em) {
+  .footer__sign {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: 2.5rem;
+  }
+
+  .footer__stack {
+    display: none;
+  }
+
+  /* Linha fina que sai da borda esquerda da tela até o nome (Brand Book) */
+  .footer__line {
+    display: block;
+    height: 1px;
+    margin-left: calc(var(--gutter) * -1);
+    background: rgb(var(--creme-rgb) / 0.7);
+  }
+
+  .footer__word {
+    display: block;
+    width: auto;
+    height: clamp(2.5rem, 4.4vw, 4rem);
+    color: var(--creme);
+  }
+
+  .footer__tag {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
