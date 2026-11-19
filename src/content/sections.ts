@@ -12,19 +12,18 @@ export const CTA_LABEL = "Falar com a Posicionados";
 
 export const HERO = {
   top: ["Posicionados", "Brand Agency · Brand Content", "© 2026"],
-  lineOne: "Torne sua marca",
-  lineTwoStart: "a mais",
-  emphasis: "atraente",
-  lineThree: "do seu público",
+  lineOne: "Refine a presença da sua marca e amplie seu",
+  emphasis: "valor percebido.",
   bottomLeft: "Posicionados",
 };
 
 export const CONCEPT = {
   label: "Captação & conteúdo digital",
-  title: "Uma marca atraente tem luz própria",
+  titleStart: "Sustente o posicionamento da sua marca em",
+  emphasis: "cada ponto de contato.",
   text: [
-    "A Posicionados cria Reels, carrosséis e fotografias a partir da identidade da sua marca",
-    "Da ideia à entrega, com direção criativa e produção em estúdio",
+    "Desenvolvemos conteúdos alinhados à estratégia e à identidade da sua marca, mantendo consistência visual, excelência na comunicação e relevância diante do público.",
+    "Reels, carrosséis e fotografias. Da direção criativa à pós-produção.",
   ],
 };
 
@@ -33,41 +32,51 @@ export const PRESENCE = {
   items: [
     {
       name: "Reels",
-      tagline: "Movimento e conexão",
-      text: "Vídeos que apresentam suas ideias e diferenciais",
+      tagline: "Presença e conexão",
+      text: "Vídeos que comunicam os diferenciais da marca, despertam interesse e aproximam sua mensagem do público.",
     },
     {
       name: "Carrosséis",
-      tagline: "Conteúdo e autoridade",
-      text: "Conteúdo que explica a marca e reforça seu valor",
+      tagline: "Clareza e autoridade",
+      text: "Conteúdos que organizam ideias, comunicam valor e fortalecem a percepção da marca.",
     },
     {
       name: "Fotografia",
       tagline: "Identidade e reconhecimento",
-      text: "Imagens que traduzem a personalidade da marca",
+      text: "Imagens que traduzem a essência da marca e constroem uma identidade visual consistente.",
     },
     {
       name: "Direção criativa",
-      tagline: "Intenção em cada detalhe",
-      text: "Pauta, roteiro e narrativa a partir da identidade da marca",
+      tagline: "Estratégia em cada detalhe",
+      text: "Da pauta ao roteiro, desenvolvemos narrativas alinhadas ao posicionamento, à identidade e aos objetivos da marca.",
+    },
+    {
+      name: "Pós-produção",
+      tagline: "Precisão e acabamento",
+      text: "Edição, tratamento e finalização para garantir unidade visual, qualidade técnica e consistência em cada entrega.",
     },
   ],
   closing: [
-    "Cada conteúdo nasce de uma intenção",
-    "E permanece na memória de quem o vê",
+    "Cada conteúdo comunica.",
+    "Cada detalhe com precisão constrói percepção.",
   ],
 };
 
 export const PACKAGES_INTRO = {
-  titleStart: "Um pacote para cada",
-  emphasis: "momento da marca",
-  subtitle: "Escolha o que combina com o momento que sua marca vive",
-  closing: "O olhar demora no que foi feito com",
-  closingEmphasis: "cuidado",
-  notes: ["Projetos de branding e identidade visual são orçados à parte"],
+  titleStart: "Produção audiovisual pensada para a",
+  emphasis: "continuidade da sua marca.",
+  subtitle:
+    "Do lançamento de produtos à construção de autoridade e presença de marca, apresentamos soluções que acompanham os objetivos do seu projeto, com direção criativa e excelência em cada entrega.",
+  closingStart: "O que sua marca",
+  closingEmphasis: "comunica",
+  closingEnd: "assim que você bate o olho nela?",
+  notes: [
+    "Por trás de todo negócio existe uma ideia que nasceu de alguém. Uma paixão que encontrou espaço para se tornar realidade. Mas será que a marca que você construiu transmite aquele mesmo sentimento que fez você começar?",
+    "Aqui desenvolvemos a essência da sua marca como nosso foco principal. Os projetos de branding, gestão contínua e identidade visual serão orçados conforme sua necessidade caso sinta que a Posicionados agora é a sua linha de frente.",
+  ],
   labels: {
     deliverables: "Entregas",
-    studioTime: "Tempo de estúdio",
+    studioTime: "Estúdio",
     audience: "Indicado para",
     cta: "Quero este pacote",
   },
@@ -79,6 +88,10 @@ export const STUDIO = {
     "As produções acontecem no Studio Mob, em Boa Viagem, Recife",
     "Estúdio criativo de 60 m², com iluminação, mobiliário e cenários para diferentes linguagens visuais",
   ],
+  instagram: {
+    href: "https://www.instagram.com/oi_mob/",
+    label: "Conhecer o Studio Mob no Instagram",
+  },
   groups: [
     {
       id: "iluminacao",

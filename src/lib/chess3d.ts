@@ -101,8 +101,8 @@ export function mountChess(canvases: HTMLCanvasElement[], host: HTMLElement): ()
   const wide = window.matchMedia("(min-width: 56.25em)");
 
   const material = new THREE.MeshStandardMaterial({
-    color: "#b9705a",
-    roughness: 0.5,
+    color: "#ecdfd1",
+    roughness: 0.42,
     metalness: 0,
   });
 

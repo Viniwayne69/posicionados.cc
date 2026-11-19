@@ -9,13 +9,13 @@ export function Studio() {
     <section id="estudio" className="section studio theme-sand" aria-labelledby="studio-title">
       <div className="container">
         <div className="studio__intro">
-          <div className="studio__arch" data-scrub="0.98,0.45">
+          <div className="studio__photo" data-scrub="0.98,0.45">
             <ImageSlot
-              className="slot--arch"
-              src="/img/estudio-arco.webp"
-              alt="Ambiente do Studio Mob, em Recife, com mobiliário e iluminação de estúdio"
-              width={1024}
-              height={1536}
+              className="slot--photo"
+              src="/img/estudio.webp"
+              alt="Ambiente do Studio Mob, em Recife, com softbox, fundo infinito e mobiliário de estúdio"
+              width={1165}
+              height={854}
             />
           </div>
 
@@ -30,6 +30,16 @@ export function Studio() {
               {STUDIO.text.map((line) => (
                 <p key={line}>{line}</p>
               ))}
+            </div>
+            <div data-reveal style={stagger(3)}>
+              <a
+                className="text-link"
+                href={STUDIO.instagram.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {STUDIO.instagram.label}
+              </a>
             </div>
           </div>
         </div>

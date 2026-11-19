@@ -1,15 +1,10 @@
 # Imagens do site
 
-Coloque aqui os arquivos com **exatamente** estes nomes. Enquanto um arquivo não existir, o site mostra um placeholder tom sobre tom (nada quebra).
+Arquivos usados hoje, com **exatamente** estes nomes:
 
 | Arquivo | Onde aparece | Formato |
 | --- | --- | --- |
-| `mulher.webp` | Hero (desktop e celular): silhueta da mulher **sem fundo**, por cima do círculo feito em CSS | WebP transparente, 1536×1154 (proporção fixa no código) |
-| `estudio-arco.webp` | Foto do estúdio, dentro da moldura em arco | WebP, 2:3, 1024×1536 (usada na resolução original) |
-| `fechamento.webp` | Fechamento (cavalo de xadrez em close, no terço esquerdo; metade direita escura e vazia). A foto ocupa a seção inteira no desktop | WebP, 3:2, 1536×1024 (usada na resolução original) |
-| `og.jpg` | Compartilhamento (Open Graph / Twitter) | JPG, 1200×630 |
-
-Dicas
-- JPG com qualidade 80 a 85, até ~300 KB cada.
-- `mulher.webp` precisa de fundo transparente. Se trocar por outra imagem de proporção diferente, ajuste `aspect-ratio` em `.hero__figure` (`src/styles/components.css`) e `width`/`height` em `Hero.tsx`.
-- O círculo terracota do hero é CSS, não faz parte da imagem. Se a imagem da mulher faltar, o círculo continua aparecendo.
+| `hero.webp` | Hero: foto do homem com o jornal, inteira, sem corte | WebP vertical, 1122×1402 (se trocar a proporção, ajuste `aspect-ratio` em `.hero__photo` e `width`/`height` em `Hero.tsx`) |
+| `estudio.webp` | Foto do Studio Mob, na seção Estúdio (inteira, sem corte) | WebP horizontal, 1165×854 (se trocar a proporção, ajuste `aspect-ratio` em `.slot--photo` e `width`/`height` em `Studio.tsx`) |
+| `fechamento.webp` | Fechamento (cavalo de xadrez em close). A foto ocupa a seção inteira no desktop | WebP, 3:2, 1536×1024 |
+| `og.jpg` | Prévia do link (WhatsApp, Instagram, Open Graph / Twitter) | JPG, 1200×630 |

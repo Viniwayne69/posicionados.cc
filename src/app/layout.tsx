@@ -13,7 +13,7 @@ import "@/styles/motion.css";
 
 const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["200", "300", "400", "600", "800"],
+  weight: ["300", "400", "500"],
   display: "swap",
   variable: "--font-manrope",
 });
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#222121",
+  themeColor: "#8c4d3a",
   width: "device-width",
   initialScale: 1,
 };

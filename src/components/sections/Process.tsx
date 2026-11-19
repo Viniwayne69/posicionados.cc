@@ -74,7 +74,7 @@ export function Process() {
   return (
     <section
       id="processo"
-      className="section process theme-dark"
+      className="section process theme-terra"
       aria-labelledby="process-title"
     >
       <div className="grain" aria-hidden="true" />

@@ -19,7 +19,7 @@ export const PACKAGES: Package[] = [
     id: "essencial",
     name: "Essencial",
     price: "R$ 1.500",
-    summary: "2 Reels, 1 carrossel, 6 fotografias, até 2h",
+    summary: "2 Reels, 1 carrossel, 6 fotografias, locação de 2h",
     opening: "O lançamento merece ser percebido",
     text: ["Para apresentar um produto, coleção ou novidade com conteúdo visual à altura"],
     deliverables: [
@@ -31,14 +31,14 @@ export const PACKAGES: Package[] = [
       "Roteiros audiovisuais",
       "Legendas e chamadas para ação",
     ],
-    studioTime: "até 2 horas",
+    studioTime: "Locação de 2 horas",
     audience: "lançamentos, produtos, coleções e novidades",
   },
   {
     id: "signature",
     name: "Signature",
     price: "R$ 2.500",
-    summary: "3 Reels, 2 carrosséis, 8 fotografias, até 4h",
+    summary: "3 Reels, 2 carrosséis, 8 fotografias, locação de 4h",
     opening: "Por trás de toda marca, existe alguém que acredita nela",
     text: [
       "Pessoas se conectam com pessoas. O Signature mostra quem constrói a marca: histórias, personalidade e diferenciais",
@@ -52,7 +52,7 @@ export const PACKAGES: Package[] = [
       "Roteiros audiovisuais",
       "Legendas e chamadas para ação",
     ],
-    studioTime: "até 4 horas",
+    studioTime: "Locação de 4 horas",
     audience:
       "marcas pessoais e comerciais, empresários e fundadores",
   },
@@ -60,7 +60,7 @@ export const PACKAGES: Package[] = [
     id: "signature-black",
     name: "Signature Black",
     price: "R$ 3.800",
-    summary: "4 Reels, 3 carrosséis, 12 fotografias, até 4h",
+    summary: "4 Reels, 3 carrosséis, 12 fotografias, locação de 4h",
     opening: "O reconhecimento começa naquilo que a marca representa",
     text: [
       "Aprofunda a imagem de quem lidera a marca, com narrativas que reforçam autoridade e percepção de valor",
@@ -75,7 +75,7 @@ export const PACKAGES: Package[] = [
       "Direcionamento de linguagem digital",
       "Legendas e chamadas para ação",
     ],
-    studioTime: "até 4 horas",
+    studioTime: "Locação de 4 horas",
     audience:
       "marcas que querem consolidar presença e autoridade",
     featured: true,
@@ -84,7 +84,7 @@ export const PACKAGES: Package[] = [
     id: "branding-strategy",
     name: "Branding Strategy",
     price: "R$ 5.000",
-    summary: "5 Reels, 4 carrosséis, 15 fotografias, até 8h",
+    summary: "5 Reels, 4 carrosséis, 15 fotografias, locação de 8h",
     opening: "A estratégia de marca em imagem e movimento",
     text: [
       "Produção audiovisual guiada pela estratégia da marca, com captação mais ampla e coerência entre identidade, discurso e percepção",
@@ -100,7 +100,7 @@ export const PACKAGES: Package[] = [
       "Direcionamento de linguagem e comunicação digital",
       "Legendas e chamadas para ação",
     ],
-    studioTime: "até 8 horas",
+    studioTime: "Locação de 8 horas",
     audience:
       "marcas em crescimento, expansão ou reposicionamento",
   },

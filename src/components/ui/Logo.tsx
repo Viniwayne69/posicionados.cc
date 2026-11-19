@@ -3,8 +3,8 @@ import { HERO } from "@/content/sections";
 import { LogoHorizontal, Symbol } from "./Symbol";
 
 /**
- * Logo oficial. Tamanho mínimo online do Brand Book: símbolo 45 px de altura,
- * logo completo 45 px de altura (≈306 px de largura). Em telas estreitas só o símbolo.
+ * Logo oficial, discreto: 38 px de altura (o Brand Book indica 45 px como mínimo online).
+ * Em telas estreitas só o símbolo.
  */
 export function Logo() {
   return (

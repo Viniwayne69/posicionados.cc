@@ -21,9 +21,9 @@ export function Concept() {
           data-reveal="words"
           style={stagger(1)}
         >
-          <Words text="Uma marca atraente tem" />{" "}
+          <Words text={CONCEPT.titleStart} />{" "}
           <strong className="em">
-            <Words text="luz própria" from={4} />
+            <Words text={CONCEPT.emphasis} from={countWords(CONCEPT.titleStart)} />
           </strong>
         </h2>
         <div

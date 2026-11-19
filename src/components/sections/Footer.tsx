@@ -10,7 +10,7 @@ import { LogoHorizontal } from "@/components/ui/Symbol";
  */
 export function Footer() {
   return (
-    <footer className="footer theme-dark" aria-labelledby="footer-title">
+    <footer className="footer theme-terra" aria-labelledby="footer-title">
       <Ghost className="ghost--footer" />
 
       <div className="container">

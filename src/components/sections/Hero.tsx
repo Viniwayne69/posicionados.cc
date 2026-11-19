@@ -4,27 +4,14 @@ import { stagger } from "@/lib/stagger";
 import { Ghost } from "@/components/ui/Ghost";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 import { Symbol } from "@/components/ui/Symbol";
-import { Words } from "@/components/ui/Words";
+import { Words, countWords } from "@/components/ui/Words";
 
 export function Hero() {
   return (
-    <section id="topo" className="hero theme-dark" aria-labelledby="hero-title" data-hero>
+    <section id="topo" className="hero theme-terra" aria-labelledby="hero-title" data-hero>
       <div className="hero__bg" aria-hidden="true" />
       <Ghost className="ghost--hero" />
 
-      <div className="hero__figure">
-        <div className="sun sun--hero" aria-hidden="true" />
-        <ImageSlot
-          className="slot--cutout"
-          src="/img/mulher.webp"
-          alt="Silhueta de uma mulher em perfil contra o círculo terracota"
-          width={1536}
-          height={1154}
-          priority
-        />
-      </div>
-
-      <div className="hero__shade" aria-hidden="true" />
       <div className="grain" aria-hidden="true" />
 
       <div className="container hero__meta hero__meta--top">
@@ -33,22 +20,29 @@ export function Hero() {
         <span className="hero__corner" aria-hidden="true" />
       </div>
 
-      <div className="hero__content">
-        <div data-reveal>
-          <Symbol className="hero__mark" />
-        </div>
-        <h1 id="hero-title" className="hero__title" data-reveal="words" style={stagger(1)}>
-          <Words text={HERO.lineOne} />
-          <span className="hero__line">
-            <Words text={HERO.lineTwoStart} from={3} />{" "}
+      <div className="container hero__main">
+        <div className="hero__content">
+          <div data-reveal>
+            <Symbol className="hero__mark" />
+          </div>
+          <h1 id="hero-title" className="hero__title" data-reveal="words" style={stagger(1)}>
+            <Words text={HERO.lineOne} />{" "}
             <strong className="em">
-              <Words text={HERO.emphasis} from={5} />
+              <Words text={HERO.emphasis} from={countWords(HERO.lineOne)} />
             </strong>
-          </span>
-          <span className="hero__line">
-            <Words text={HERO.lineThree} from={6} />
-          </span>
-        </h1>
+          </h1>
+        </div>
+
+        <div className="hero__photo">
+          <ImageSlot
+            className="slot--portrait"
+            src="/img/hero.webp"
+            alt="Homem sentado numa cadeira, lendo um jornal que cobre o rosto, diante de um círculo de luz com o símbolo da Posicionados"
+            width={1122}
+            height={1402}
+            priority
+          />
+        </div>
       </div>
 
       <div className="container hero__meta hero__meta--bottom">

@@ -7,7 +7,7 @@ export function Presence() {
   return (
     <section
       id="presenca"
-      className="section presence theme-dark"
+      className="section presence theme-terra"
       aria-labelledby="presence-title"
     >
       <div className="grain" aria-hidden="true" />

@@ -7,7 +7,7 @@ import { Words, countWords } from "@/components/ui/Words";
 
 export function Closing() {
   return (
-    <section id="contato" className="closing theme-dark" aria-labelledby="closing-title">
+    <section id="contato" className="closing theme-terra" aria-labelledby="closing-title">
       <div className="grain" aria-hidden="true" />
       <Ghost className="ghost--closing" />
 

@@ -86,9 +86,10 @@ export function Packages() {
         </div>
 
         <div className="packages__closing" data-reveal>
-          <p>
-            {INTRO.closing} <strong className="em">{INTRO.closingEmphasis}</strong>
-          </p>
+          <h2 className="packages__question">
+            {INTRO.closingStart} <strong className="em">{INTRO.closingEmphasis}</strong>{" "}
+            {INTRO.closingEnd}
+          </h2>
         </div>
 
         <div className="packages__notes" data-reveal>

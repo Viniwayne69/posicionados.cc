@@ -13,7 +13,7 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-behavior: smooth;
-  background-color: var(--grafite);
+  background-color: var(--fundo);
 }
 
 body {
@@ -24,7 +24,7 @@ body {
   font-weight: 400;
   line-height: var(--lh-body);
   color: var(--creme);
-  background-color: var(--grafite);
+  background-color: var(--fundo);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -54,14 +54,14 @@ ol {
 h1,
 h2,
 h3 {
-  font-weight: 800;
+  font-weight: 500;
   line-height: var(--lh-title);
   letter-spacing: var(--ls-title);
   text-wrap: balance;
 }
 
 h3 {
-  font-weight: 600; /* subtítulos: SemiBold */
+  font-weight: 500;
 }
 
 img,
@@ -93,7 +93,7 @@ table {
 
 ::selection {
   background: var(--terracota);
-  color: var(--grafite);
+  color: var(--creme);
 }
 
 /* Âncoras: compensam o cabeçalho fixo */
@@ -133,9 +133,9 @@ table {
   z-index: calc(var(--z-menu) + 1);
   padding: 0.75rem 1.25rem;
   background: var(--creme);
-  color: var(--grafite);
+  color: var(--terra-tinta);
   font-size: var(--fs-small);
-  font-weight: 600;
+  font-weight: 500;
   transform: translateY(-200%);
   transition: transform 0.2s var(--ease);
 }

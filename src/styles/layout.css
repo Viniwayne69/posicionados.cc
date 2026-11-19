@@ -46,9 +46,9 @@
 }
 
 .em {
-  font-weight: 800;
-  text-transform: uppercase; /* palavra-chave em caixa alta e negrito, como no brand book */
-  letter-spacing: -0.01em;
+  font-weight: 500;
+  text-transform: uppercase; /* palavra-chave em caixa alta e peso médio, só a cor a destaca */
+  letter-spacing: 0.01em;
   color: var(--emph);
 }
 

@@ -34,7 +34,7 @@ Os scripts usam `--webpack` porque o Turbopack do Next 16 não resolveu a fonte 
 
 **Peças de xadrez 3D (seção Processo):** modelos do "Chess Set" do Poly Haven, por Riley Queen, licença CC0 (https://polyhaven.com/a/chess_set). O arquivo usado pelo site é `public/models/chess-pieces.glb` (cinco peças, comprimido, ~90 KB). Para gerar de novo: baixe `chess_set_1k.gltf` e `chess_set.bin` do Poly Haven numa pasta e rode `node scripts/build-chess-model.mjs <pasta>/chess_set_1k.gltf`. A renderização fica em `src/lib/chess3d.ts` (Three.js, carregado só quando a seção se aproxima da tela).
 
-**Cores, fontes e espaçamentos:** `src/styles/tokens.css`. Paleta oficial: terracota `#B9705A`, grafite `#222121`, creme `#F3F1EC`, areia `#EDE7DB`. Terracota só em texto grande, negrito, linhas e fundos; texto pequeno usa grafite ou creme.
+**Cores, fontes e espaçamentos:** `src/styles/tokens.css`. Esta página é a identidade para **clientes**: só terracota e bege, com detalhes em branco, sem preto. Terracota da marca `#B9705A` em títulos grandes e linhas; terracota profundo `#8C4D3A` nas seções cheias (texto creme); tinta `#6E3A2B` e terracota médio `#8F503D` no texto sobre bege. A versão para profissionais de comunicação (preto e branco) fica fora deste projeto. Fonte Manrope em pesos 300, 400 e 500.
 
 ## Estrutura
 

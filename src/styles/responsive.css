@@ -18,17 +18,6 @@
     justify-self: end;
   }
 
-  .presence__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 3rem;
-    border-top: 0;
-  }
-
-  .presence__item {
-    border-top: 1px solid var(--line);
-    border-bottom: 0;
-  }
-
 }
 
 /* ---------- 900px ---------- */
@@ -46,27 +35,31 @@
     padding-bottom: 1.75rem;
   }
 
-  .hero__figure {
-    bottom: 0;
-    height: 100%;
+  .hero__main {
+    grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+    align-items: center;
+    column-gap: clamp(2rem, 5vw, 5rem);
+    padding-block: 1.5rem 1rem;
   }
 
-  .hero__figure .slot__img {
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
-
-  .hero__figure .sun--hero {
-    top: 38%;
-    width: 66%;
+  .hero__content {
+    justify-items: start;
+    text-align: left;
   }
 
   .hero__mark {
-    height: 3.25rem;
+    height: 2.4rem;
   }
 
   .hero__title {
-    max-width: 15em;
+    max-width: 12em;
+  }
+
+  /* Foto na altura disponível, sempre inteira */
+  .hero__photo {
+    justify-self: end;
+    width: auto;
+    height: min(calc(100svh - var(--header-h) - 8.5rem), 44rem);
   }
 
   /* Presença */
@@ -76,20 +69,11 @@
     align-items: end;
   }
 
-  .presence__grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    column-gap: 0;
-  }
-
   .presence__item {
-    padding: 0.5rem 1.75rem 1rem;
-    border-top: 0;
-    border-left: 1px solid var(--line);
-  }
-
-  .presence__item:first-child {
-    padding-left: 0;
-    border-left: 0;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 3fr) minmax(0, 5fr);
+    column-gap: clamp(2rem, 4vw, 4rem);
+    align-items: baseline;
+    padding-block: 2.1rem;
   }
 
   /* Pacotes */
@@ -124,13 +108,8 @@
 
   /* Estúdio */
   .studio__intro {
-    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
     column-gap: clamp(3rem, 7vw, 7rem);
-  }
-
-  .studio__arch {
-    width: min(100%, 30rem);
-    margin-inline: 0;
   }
 
   .studio__groups {
@@ -218,7 +197,7 @@
   }
 
   .closing__media .slot {
-    --slot-overlay: linear-gradient(90deg, rgb(34 33 33 / 0) 0%, rgb(34 33 33 / 0.2) 40%, rgb(34 33 33 / 0.88) 64%, var(--grafite) 80%);
+    --slot-overlay: linear-gradient(90deg, rgb(var(--fundo-rgb) / 0) 0%, rgb(var(--fundo-rgb) / 0.2) 40%, rgb(var(--fundo-rgb) / 0.88) 64%, var(--fundo) 80%);
   }
 
   .closing__body {
@@ -282,21 +261,21 @@
   /* "Brand Agency · Brand Content" logo abaixo do nome, alinhado ao início do nome */
   .header .logo {
     position: relative;
-    top: -6px;
+    top: -5px;
   }
 
   .header .logo__tag {
     display: block;
     position: absolute;
     top: calc(100% + 1px);
-    left: 55.5px; /* início do nome: 45px de altura × 142/115 */
+    left: 47px; /* início do nome: 38px de altura × 142/115 */
     white-space: nowrap;
     font-size: 0.62rem;
     font-weight: 300;
     line-height: 1.2;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgb(var(--creme-rgb) / 0.82);
+    color: rgb(var(--creme-rgb) / 0.9);
   }
 
   /* No desktop o texto já aparece sob o nome, então sai do hero */
@@ -308,12 +287,8 @@
     gap: 0.5rem 2.25rem;
   }
 
-  .presence__item {
-    padding-inline: 2.25rem;
-  }
-
   .hero__title {
-    max-width: 16em;
+    max-width: 13em;
   }
 }
 
