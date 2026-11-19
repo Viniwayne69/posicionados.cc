@@ -961,34 +961,15 @@
 }
 
 .process__steps {
-  --ps: 64px; /* tamanho da peça */
-  --pt: -1.2rem; /* deslocamento vertical da peça */
+  --ps: 84px; /* tamanho do quadro da peça */
+  --sb: 2.75rem; /* espaço abaixo de cada etapa */
   display: grid;
-  padding-left: calc(var(--ps) / 2); /* mobile: espaço para a peça centrada no trilho */
+  padding-left: 1.5rem; /* mobile: espaço para a peça à esquerda do texto */
 }
 
 .step {
   position: relative;
-  padding: 0 0 3rem calc(var(--ps) / 2 + 1.1rem);
-}
-
-/* Trilho (mobile: vertical): segmento que começa e termina com folga das peças */
-.step::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: calc(var(--pt) + var(--ps) + 6px);
-  bottom: calc(6px - var(--pt));
-  width: 1px;
-  background: linear-gradient(
-    to bottom,
-    color-mix(in srgb, var(--accent) 60%, transparent),
-    rgb(var(--creme-rgb) / 0.08)
-  );
-}
-
-.step:last-child::before {
-  display: none;
+  padding: 0 0 var(--sb) 2.4rem;
 }
 
 /* Peça: SVG em traço fino (antes do 3D carregar, ou sem WebGL) e canvas 3D no mesmo lugar */
@@ -996,13 +977,12 @@
 .step__canvas {
   position: absolute;
   left: calc(var(--ps) / -2);
-  top: var(--pt);
+  top: calc((100% - var(--sb)) / 2 - var(--ps) / 2); /* mobile: centrado no bloco de texto */
   width: var(--ps);
   height: var(--ps);
 }
 
 .step__piece {
-  padding: 18%;
   fill: none;
   stroke-width: 1;
   stroke-linecap: round;

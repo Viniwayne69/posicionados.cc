@@ -96,7 +96,7 @@ export function Process() {
               <li key={step.name} className="step">
                 <svg
                   className="step__piece"
-                  viewBox="0 0 24 24"
+                  viewBox="-7 -9 38 38"
                   aria-hidden="true"
                   focusable="false"
                 >

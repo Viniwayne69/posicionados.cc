@@ -167,35 +167,20 @@
     grid-area: notes;
   }
 
-  /* Processo: linha horizontal */
+  /* Processo: cinco colunas, peça acima de cada etapa */
   .process__steps {
-    --ps: 92px;
-    --pt: 0px;
+    --ps: 132px;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     padding-left: 0;
   }
 
   .step {
-    padding: calc(var(--ps) + 1.4rem) 1.75rem 0 0;
-  }
-
-  .step::before {
-    left: calc(var(--ps) * 0.78 + 6px);
-    right: 6px;
-    top: calc(var(--ps) * 0.56);
-    bottom: auto;
-    width: auto;
-    height: 1px;
-    background: linear-gradient(
-      to right,
-      color-mix(in srgb, var(--accent) 60%, transparent),
-      rgb(var(--creme-rgb) / 0.08)
-    );
+    padding: calc(var(--ps) + 1rem) 1.75rem 0 0;
   }
 
   .step__piece,
   .step__canvas {
-    left: calc(var(--ps) * -0.2);
+    left: calc(var(--ps) * -0.3);
     top: 0;
   }
 
